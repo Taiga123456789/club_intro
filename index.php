@@ -34,7 +34,7 @@ $files = glob('data/*.txt');
             ?>
             <li>
                 <a href="detail.php?club=<?php echo h($club_id); ?>">
-                    <?php echo h($club_name); ?>部
+                    <?php echo h($club_name); ?>
                 </a>
             </li>
         <?php endforeach; ?>

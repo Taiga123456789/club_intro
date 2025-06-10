@@ -1,24 +1,11 @@
 <?php
 require_once 'mylib.php';
 
-// URLパラメータから部活動IDを取得
-$club_id = isset($_GET['club']) ? $_GET['club'] : '';
 
-// --- セキュリティチェック ---
-// 1. IDが英数字とアンダースコアのみで構成されているかチェック
-if (!preg_match('/^[a-zA-Z0-9_]+$/', $club_id)) {
-    die('不正なIDです。');
-}
-// 2. ファイルパスを安全に構築
-$filename = 'data/' . basename($club_id) . '.txt';
-// 3. ファイルが存在するかチェック
-if (!file_exists($filename)) {
-    die('指定された部活動の情報は見つかりませんでした。');
-}
-// --- セキュリティチェックここまで ---
 
 
 // ファイルの内容を取得
+$filename = $_GET['data'];
 $club_info = getClubInfo($filename);
 
 ?>
