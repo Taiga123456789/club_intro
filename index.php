@@ -1,14 +1,41 @@
 <?php
 require_once 'mylib.php';
 
-// dataフォルダにある.txtファイルの一覧を取得
 $files = glob('data/*.txt');
+
+$clubs = [];
+
+foreach ($files as $file) {
+    $id = basename($file, '.txt');
+    
+    $name = null;
+    $handle = @fopen($file, 'r');
+    if ($handle) {
+        $first_line = fgets($handle);
+        fclose($handle);
+        
+        $first_line = mb_convert_encoding($first_line, 'UTF-8', 'auto');
+
+        $first_line = str_replace(':', '：', $first_line);
+
+        $parts = explode('：', $first_line, 2);
+        if (count($parts) === 2) {
+            $name = trim($parts[1]);
+        }
+    }
+
+    $clubs[] = [
+        'id' => $id,
+        'name' => $name ?? ucfirst($id)
+    ];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>部活動紹介</title>
+    <title>校友会活動紹介</title>
     <style>
         body { font-family: sans-serif; line-height: 1.6; }
         .container { max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
@@ -22,19 +49,13 @@ $files = glob('data/*.txt');
 <body>
 
 <div class="container">
-    <h1>部活動紹介</h1>
-    <p>見たい部活動をクリックしてください。</p>
+    <h1>校友会活動紹介</h1>
+    <p>見たい校友会活動をクリックしてください。</p>
     <ul>
-        <?php foreach ($files as $file) : ?>
-            <?php
-            // ファイル名から拡張子(.txt)を除いた部分を取得 (例: programming)
-            $club_id = basename($file, '.txt');
-            // ファイル名から部活動名を作成 (例: Programming)
-            $club_name = ucfirst($club_id);
-            ?>
+        <?php foreach ($clubs as $club) : ?>
             <li>
-                <a href="detail.php?club=<?php echo h($club_id); ?>">
-                    <?php echo h($club_name); ?>
+                <a href="detail.php?club=<?php echo h($club['id']); ?>">
+                    <?php echo h($club['name']); ?>
                 </a>
             </li>
         <?php endforeach; ?>
