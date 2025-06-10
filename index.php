@@ -36,15 +36,7 @@ foreach ($files as $file) {
 <head>
     <meta charset="UTF-8">
     <title>校友会活動紹介</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; }
-        .container { max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
-        h1 { border-bottom: 2px solid #007bff; padding-bottom: 10px; }
-        ul { list-style: none; padding: 0; }
-        li { margin: 10px 0; }
-        a { text-decoration: none; color: #007bff; font-size: 1.2em; }
-        a:hover { text-decoration: underline; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 

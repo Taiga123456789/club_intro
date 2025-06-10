@@ -30,22 +30,7 @@ $club_info = getClubInfo($filename);
 <head>
     <meta charset="UTF-8">
     <title>校友会活動詳細</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; }
-        .container { max-width: 800px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
-        h1 { border-bottom: 2px solid #28a745; padding-bottom: 10px; }
-        
-        .club-image {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-
-        .output { background-color: #f9f9f9; border: 1px solid #ddd; padding: 15px; margin-top: 10px; white-space: pre-wrap; }
-        .back-link { display: inline-block; margin-top: 20px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 

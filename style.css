@@ -1,0 +1,120 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    padding: 30px;
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 12px;
+}
+
+header {
+    background: linear-gradient(135deg, #3a6073, #163849);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    margin-bottom: 40px;
+    border-radius: 8px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    letter-spacing: 1.2px;
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+main h2 {
+    color: #2c3e50;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 1.5rem;
+    margin-bottom: 40px;
+    font-size: 2.4em;
+}
+
+.club-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 0;
+    list-style: none;
+}
+
+.club-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+}
+
+.club-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.club-card a {
+    display: block;
+    padding: 25px;
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1.4em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.club-card a:hover {
+    background-color: #f0f8ff;
+}
+
+.club-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.output {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 25px;
+    white-space: pre-wrap;
+    line-height: 1.8;
+    border-radius: 8px;
+    font-size: 1.05em;
+    color: #555;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
